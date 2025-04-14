@@ -15,6 +15,7 @@
 
 2. **导航到 OAuth 2.0 客户端 ID**：
    - 在左侧导航栏，选择 **APIs & Services > Credentials**。
+   - 点击Create Credentials
    - 找到您之前创建的 **OAuth 2.0 Client ID**，点击其名称进行编辑。
 
 3. **检查并添加授权的重定向 URI**：
