@@ -43,7 +43,7 @@
    - 点击 **"Close"** 保存设置。
 
 3. **选择正确的作用域**：
-   - 在 **"Step 1: Select & authorize APIs"** 部分，展开 **"Admin SDK"**。
+   - 在 **"Step 1: Select & authorize APIs"** 部分，展开 **"Admin SDK API directory_v1"**。
    - 勾选 "https://www.googleapis.com/auth/admin.directory.user"。
    - 点击 **"Authorize APIs"**。
 
