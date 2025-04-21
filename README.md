@@ -1,4 +1,65 @@
 # Google-Workspace-Self-Registration
+### 使用
+
+## 部署Cloudflare Worker的详细步骤
+
+### 1. 准备工作
+
+首先，你需要：
+- 一个Cloudflare账户
+- 一个Google Workspace账户（用于创建邮箱）
+- Cloudflare Turnstile配置（用于验证码）
+
+### 2. 设置Google API凭据
+
+参考下面的介绍
+
+### 3. 配置Cloudflare Turnstile
+
+1. 登录Cloudflare账户
+2. 选择"Turnstile"
+3. 创建一个新的站点验证 可以添加你的worker地址
+4. 记下Site Key和Secret Key
+
+### 4. 部署Worker到Cloudflare
+
+1. 登录[Cloudflare Dashboard](https://dash.cloudflare.com/)
+2. 点击"Workers & Pages"
+3. 点击"Create application"
+4. 选择"Create Worker"
+5. 将你提供的代码粘贴到编辑器中
+6. 点击"Save and Deploy"
+
+### 5. 配置环境变量
+
+在Worker设置中，你需要添加以下环境变量：
+敏感信息变量建议选择密钥 
+
+1. `GOOGLE_CLIENT_ID` - 你的Google API客户端ID
+2. `GOOGLE_CLIENT_SECRET` - 你的Google API客户端密钥
+3. `GOOGLE_REFRESH_TOKEN` - 你的Google API刷新令牌
+4. `GOOGLE_ADMIN_EMAIL` - 你的Google Workspace管理员邮箱
+5. `VERIFICATION_CODE` - 你设置的注册验证码
+6. `EMAIL_DOMAIN` - 你的邮箱域名（例如：@oracle.com）
+7. `TURNSTILE_SITE_KEY` - Cloudflare Turnstile的Site Key
+8. `TURNSTILE_SECRET_KEY` - Cloudflare Turnstile的Secret Key
+
+方法：
+- 在Cloudflare Dashboard中，进入你的Worker
+- 点击"Settings"选项卡
+- 往下滚动到"Variables"部分
+- 点击"Add variable"并添加上述所有变量
+- 点击"Save"保存设置
+
+### 6. 设置自定义域名（可选）
+
+如果你想使用自定义域名：
+1. 在Worker的"Triggers"选项卡中
+2. 点击"Add Custom Domain"
+3. 输入你想要使用的域名
+4. 按照指示完成DNS配置
+
+
 ### 前提条件
 
 在开始之前，请确保您已经完成以下步骤：
